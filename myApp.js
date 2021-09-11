@@ -4,6 +4,13 @@ var bGround = require('fcc-express-bground');
 bGround.log("Hello World");
 console.log("Hello World");
 
+app.use(function(req, res, next) {
+    console.log(req.method+" "+req.path+"-"+req.ip);
+    next();
+  })
+
+
+
 app.use("/public",express.static(__dirname + "/public"))
 app.get('/',(req,res)=>{
    
