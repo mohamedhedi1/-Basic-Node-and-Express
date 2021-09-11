@@ -43,7 +43,8 @@ app.get('/:word/echo',(req,res)=>
 app.get("/name",(req,res)=>
 {
     const q =req.query;
-    res.send({name : q.firstname+" "+q.lastname})
+    
+    res.send({name : q.first+" "+q.last})
 })
 
 
