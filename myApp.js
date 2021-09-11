@@ -1,8 +1,13 @@
 var express = require('express');
 var app = express();
 var bGround = require('fcc-express-bground');
+var bodyParser=require('body-parser');
 bGround.log("Hello World");
 console.log("Hello World");
+
+app.use( bodyParser.urlencoded({extended: false})
+)
+app.use(bodyParser.json())
 
 app.use(function(req, res, next) {
     console.log(req.method+" "+req.path+" - "+req.ip);
@@ -43,7 +48,7 @@ app.get('/:word/echo',(req,res)=>
 app.get("/name",(req,res)=>
 {
     const q =req.query;
-    
+
     res.send({name : q.first+" "+q.last})
 })
 
