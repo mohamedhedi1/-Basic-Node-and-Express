@@ -52,6 +52,13 @@ app.get("/name",(req,res)=>
     res.send({name : q.first+" "+q.last})
 })
 
+app.post('/name',(req,res)=>
+{
+    const q =req.query;
+
+    res.send({name : q.first+" "+q.last})
+})
+
 
 
 
