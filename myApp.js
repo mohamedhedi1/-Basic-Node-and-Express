@@ -54,7 +54,7 @@ app.get("/name",(req,res)=>
 
 app.post('/name',(req,res)=>
 {
-    const q =req.query;
+    const q =res.query;
 
     res.send({name : q.first+" "+q.last})
 })
